@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { ButtonHTMLAttributes } from "react";
 
 type ButtonVariant = "primary" | "secondary" | "ghost";
@@ -6,6 +7,7 @@ type ButtonSize = "sm" | "md" | "lg";
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   variant?: ButtonVariant;
   size?: ButtonSize;
+  href?: string;
 };
 
 const baseStyles =
@@ -27,6 +29,7 @@ export default function Button({
   variant = "secondary",
   size = "md",
   className,
+  href,
   ...props
 }: ButtonProps) {
   const classes = [
@@ -37,6 +40,14 @@ export default function Button({
   ]
     .filter(Boolean)
     .join(" ");
+
+  if (href) {
+    return (
+      <Link href={href} className={classes}>
+        {props.children}
+      </Link>
+    );
+  }
 
   return <button className={classes} {...props} />;
 }
