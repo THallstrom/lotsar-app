@@ -21,8 +21,8 @@ const profiles: ChaufforProfile[] = [
     location: "Örebro - 20 mil",
     licenses: "CE, Fjär",
     image:
-      "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?q=80&w=480&auto=format&fit=crop",
-    imagePosition: "center",
+      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=480&auto=format&fit=crop",
+    imagePosition: "center 30%",
     imageScale: 0.98,
   },
   {
